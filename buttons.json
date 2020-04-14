@@ -1,5 +1,5 @@
 {
-  "modulo": {
+  "percentage": {
     "symbol": "%",
     "row": 0,
     "column": 0
@@ -53,5 +53,70 @@
     "symbol": "+",
     "row": 4,
     "column": 3
+  },
+  "plusMinusInversion": {
+    "symbol": "+-",
+    "row": 5,
+    "column": 0
+  },
+  "decimalSeparator": {
+    "symbol": ",",
+    "row": 5,
+    "column": 2
+  },
+  "result": {
+    "symbol": "=",
+    "row": 5,
+    "column": 3
+  },
+  "number_nine": {
+    "symbol": "9",
+    "row": 2,
+    "column": 2
+  },
+  "number_eight": {
+    "symbol": "8",
+    "row": 2,
+    "column": 1
+  },
+  "number_seven": {
+    "symbol": "7",
+    "row": 2,
+    "column": 0
+  },
+  "number_six": {
+    "symbol": "6",
+    "row": 3,
+    "column": 2
+  },
+  "number_five": {
+    "symbol": "5",
+    "row": 3,
+    "column": 1
+  },
+  "number_four": {
+    "symbol": "4",
+    "row": 3,
+    "column": 0
+  },
+  "number_three": {
+    "symbol": "3",
+    "row": 4,
+    "column": 2
+  },
+  "number_two": {
+    "symbol": "2",
+    "row": 4,
+    "column": 1
+  },
+  "number_one": {
+    "symbol": "1",
+    "row": 4,
+    "column": 0
+  },
+  "number_zero": {
+    "symbol": "0",
+    "row": 5,
+    "column": 1
   }
 }
