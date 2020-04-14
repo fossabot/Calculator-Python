@@ -14,7 +14,6 @@ class CommandList():
             inputValue.set("√("+value+")")
     def secondPower(inputValue):
         value = CommandList.check(inputValue)
-        print(value)
         if value is not "":
             inputValue.set("("+value+")^2")
     def inverseMultiplicative(inputValue):
@@ -76,7 +75,8 @@ class CommandList():
         value = CommandList.check(inputValue)
         if (value is not None or value is not "") and len(value) >= 1:
             if re.search("[0-9]", value[len(value)-1]):
-                value = value+","
+                # value = value+","
+                value = value+"."
         inputValue.set(value)
     def result(inputValue):
         value = CommandList.check(inputValue)
@@ -89,8 +89,6 @@ class CommandList():
 
         # nahrazení odmocniny za python funkci squared (druhá odmocnina)
         value = value.replace("√", "math.sqrt")
-
-        print(value)
 
         try:
             result = eval(value)

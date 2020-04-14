@@ -30,7 +30,7 @@ class App:
 
         # https://stackoverflow.com/a/4140988
         inputValidate = self.root.register(self.onValidate)
-        self.input = Entry(self.frame, bg="#8395a7", textvariable=self.inputValue, validate="key", justify='right', validatecommand=(inputValidate, "%P"))
+        self.input = Entry(self.frame, bg="#8395a7", textvariable=self.inputValue, font=("Arial", 14, "bold"), validate="key", justify='right', validatecommand=(inputValidate, "%P"))
         self.input.grid(row=0, column=0, sticky=N+S+E+W, padx=5, pady=5, columnspan=4)
 
         self.buttonsFrame = Frame(self.frame, bg="#fff")
@@ -41,7 +41,7 @@ class App:
         self.buttonsGrid()
 
     def onValidate(self, value):
-        if re.search("[^\^0-9,/*%+\-√()]+", value):
+        if re.search("[^\^0-9,\./*%+\-√()]+", value):
             return(False)
         else:
             return(True)
