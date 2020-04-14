@@ -1,4 +1,5 @@
 import re
+import math
 
 class CommandList():
     def check(inputValue):
@@ -9,21 +10,18 @@ class CommandList():
             retun(0)
     def nthRoot(inputValue):
         value = CommandList.check(inputValue)
-        if value is not None:
-            lastNumber = re.search("[0-9]+(\.{1}[0-9]+)?\)*$", value)
-            if lastNumber:
-                inputValue.set("√("+lastNumber+")")
+        if value is not "":
+            inputValue.set("√("+value+")")
     def secondPower(inputValue):
         value = CommandList.check(inputValue)
-        if re.search("[0-9]+(\.{1}[0-9]+)?\)*$", value):
+        print(value)
+        if value is not "":
             inputValue.set("("+value+")^2")
-    def inversion(inputValue):
+    def inverseMultiplicative(inputValue):
         value = CommandList.check(inputValue)
-        if value is not None:
+        if value is not "":
             value = "1/("+value+")"
         inputValue.set(value)
-    def clearEntry(inputValue):
-        inputValue.set(CommandList.check(inputValue))
     def clear(inputValue):
         inputValue.set("")
     def delete(inputValue):
@@ -75,9 +73,31 @@ class CommandList():
                         start = start - 1
         inputValue.set(value)
     def decimalSeparator(inputValue):
-        inputValue.set(CommandList.check(inputValue))
+        value = CommandList.check(inputValue)
+        if (value is not None or value is not "") and len(value) >= 1:
+            if re.search("[0-9]", value[len(value)-1]):
+                value = value+","
+        inputValue.set(value)
     def result(inputValue):
-        inputValue.set(CommandList.check(inputValue))
+        value = CommandList.check(inputValue)
+
+        # python používá jako desetinné znaménko ".", ne české ","
+        value = value.replace(",", ".")
+
+        # python má odmocninu jako **, ne ^
+        value = value.replace("^", "**")
+
+        # nahrazení odmocniny za python funkci squared (druhá odmocnina)
+        value = value.replace("√", "math.sqrt")
+
+        print(value)
+
+        try:
+            result = eval(value)
+        except:
+            result = "ERROR"
+
+        inputValue.set(result)
     def number_nine(inputValue):
         inputValue.set(CommandList.check(inputValue)+"9")
     def number_eight(inputValue):

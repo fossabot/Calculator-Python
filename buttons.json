@@ -9,15 +9,10 @@
     "row": 0,
     "column": 2
   },
-  "inversion": {
+  "inverseMultiplicative": {
     "symbol": "1/x",
     "row": 0,
     "column": 3
-  },
-  "clearEntry": {
-    "symbol": "CE",
-    "row": 1,
-    "column": 0
   },
   "clear": {
     "symbol": "C",
