@@ -9,9 +9,11 @@ class App:
     def __init__(self, root):
         self.root = root
 
+        # nakonfigurování hlavního gridu
         Grid.rowconfigure(self.root, 0, weight=1)
         Grid.columnconfigure(self.root, 0, weight=1)
 
+        # defaultní velikost
         self.root.geometry("500x600")
 
         self.root.title("Kalkulačka")
@@ -31,6 +33,7 @@ class App:
         # https://stackoverflow.com/a/4140988
         inputValidate = self.root.register(self.onValidate)
         self.input = Entry(self.frame, bg="#8395a7", textvariable=self.inputValue, font=("Arial", 14, "bold"), validate="key", justify='right', validatecommand=(inputValidate, "%P"))
+
         self.input.grid(row=0, column=0, sticky=N+S+E+W, padx=5, pady=5, columnspan=4)
 
         self.buttonsFrame = Frame(self.frame, bg="#fff")
@@ -40,29 +43,34 @@ class App:
         self.createButtons()
         self.buttonsGrid()
 
+    # metoda, která se spouští vždy, když uživatel napíše znak a hlídá, aby bylo možné vložit pouze čísla a některé další znaky (odmocnina, mocnina, krát,..)
     def onValidate(self, value):
         if re.search("[^\^0-9,\./*%+\-√()]+", value):
             return(False)
         else:
             return(True)
 
+    # metoda, která konfiguruje grid u framu
     def frameGrid(self):
         for x in range(4):
             Grid.columnconfigure(self.frame, x, weight=1)
         for y in range(6):
             Grid.rowconfigure(self.frame, y, weight=1)
 
+    # metoda, která konfiguruje grid u tlačítek
     def buttonsGrid(self):
         for x in range(4):
             Grid.columnconfigure(self.buttonsFrame, x, weight=1)
         for y in range(6):
             Grid.rowconfigure(self.buttonsFrame, y, weight=1)
 
+    # nastavení jednotlivého tlačítka
     def getButton(self, symbol, row, column, name):
         functionCall = eval("CommandList."+name)
         button = Button(self.buttonsFrame, text=symbol, font=("Arial", 14, "bold"), cursor="hand2", bd=0, bg="#4a69bd", activebackground="#82ccdd", fg="#ecf0f1", command= lambda: functionCall(self.inputValue)).grid(row=row, column=column, sticky=N+S+E+W)
         return(button)
 
+    # získání tlačítek ze souboru
     def createButtons(self):
         # otevření json souboru s tlačítky
         try:

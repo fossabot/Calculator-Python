@@ -8,32 +8,52 @@ class CommandList():
             return(value)
         else:
             retun(0)
+
+    # odmocnina z x
     def nthRoot(inputValue):
         value = CommandList.check(inputValue)
         if value is not "":
             inputValue.set("√("+value+")")
+
+    # x^2
     def secondPower(inputValue):
         value = CommandList.check(inputValue)
         if value is not "":
             inputValue.set("("+value+")^2")
+
+    # 1/x
     def inverseMultiplicative(inputValue):
         value = CommandList.check(inputValue)
         if value is not "":
             value = "1/("+value+")"
         inputValue.set(value)
+
+    # vymazání celého inputu
     def clear(inputValue):
         inputValue.set("")
+
+    # vymazání posledního znaku
     def delete(inputValue):
         value = CommandList.check(inputValue)
         inputValue.set(value[:len(value)-1])
+
+    # dělení
     def divide(inputValue):
         inputValue.set(CommandList.check(inputValue)+"/")
+
+    # násobení
     def multiply(inputValue):
         inputValue.set(CommandList.check(inputValue)+"*")
+
+    # odečtení
     def minus(inputValue):
         inputValue.set(CommandList.check(inputValue)+"-")
+
+    # přičtení
     def plus(inputValue):
         inputValue.set(CommandList.check(inputValue)+"+")
+
+    # změna posledního čísla z + na - nebo vice versa
     def plusMinusInversion(inputValue):
         value = CommandList.check(inputValue)
 
@@ -71,6 +91,8 @@ class CommandList():
                     else:
                         start = start - 1
         inputValue.set(value)
+
+    # desetinné znaménko
     def decimalSeparator(inputValue):
         value = CommandList.check(inputValue)
         if (value is not None or value is not "") and len(value) >= 1:
@@ -78,6 +100,8 @@ class CommandList():
                 # value = value+","
                 value = value+"."
         inputValue.set(value)
+
+    # výsledek
     def result(inputValue):
         value = CommandList.check(inputValue)
 
@@ -96,6 +120,8 @@ class CommandList():
             result = "ERROR"
 
         inputValue.set(result)
+
+    # tlačítka čísel od 0 do 9
     def number_nine(inputValue):
         inputValue.set(CommandList.check(inputValue)+"9")
     def number_eight(inputValue):
