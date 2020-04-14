@@ -1,0 +1,57 @@
+{
+  "modulo": {
+    "symbol": "%",
+    "row": 0,
+    "column": 0
+  },
+  "nthRoot": {
+    "symbol": "√",
+    "row": 0,
+    "column": 1
+  },
+  "secondPower": {
+    "symbol": "x^2",
+    "row": 0,
+    "column": 2
+  },
+  "inversion": {
+    "symbol": "1/x",
+    "row": 0,
+    "column": 3
+  },
+  "clearEntry": {
+    "symbol": "CE",
+    "row": 1,
+    "column": 0
+  },
+  "clear": {
+    "symbol": "C",
+    "row": 1,
+    "column": 1
+  },
+  "delete": {
+    "symbol": "<-",
+    "row": 1,
+    "column": 2
+  },
+  "divide": {
+    "symbol": "/",
+    "row": 1,
+    "column": 3
+  },
+  "multiply": {
+    "symbol": "*",
+    "row": 2,
+    "column": 3
+  },
+  "minus": {
+    "symbol": "-",
+    "row": 3,
+    "column": 3
+  },
+  "plus": {
+    "symbol": "+",
+    "row": 4,
+    "column": 3
+  }
+}
