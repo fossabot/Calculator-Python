@@ -1,9 +1,4 @@
 {
-  "percentage": {
-    "symbol": "%",
-    "row": 0,
-    "column": 0
-  },
   "nthRoot": {
     "symbol": "√",
     "row": 0,
